@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "dayjs": "^1.10.7",
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-dev": "^7.0.0",
+    "weather-js": "^2.0.0"
   }
 }
