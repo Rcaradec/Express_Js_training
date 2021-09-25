@@ -9,6 +9,9 @@ const timezone = require("dayjs/plugin/timezone");
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
+// on recupere les villeFavorites
+const villeFavorites = require("./my_modules/ressources.js");
+
 // d'abord on récupère le module Express
 const express = require("express");
 
@@ -17,12 +20,7 @@ const app = express();
 
 // on recupere notre module Weather
 var weather = require("weather-js");
-
-// Voici ou seront rangé les vues/templates
-app.set("views", "./views");
-
-// Je configure express pour lui préciser quel moteur de template on utilise
-app.set("view engine", "ejs");
+const { log } = require("console");
 
 // On indique à Express que les ressources "statiques" (css, images, polices, etc.) sont rangées dans le dossiers 'public'
 app.use(express.static("public"));
@@ -36,11 +34,29 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/city/:ville", (req, res) => {
+  // Récupérer la ville demandée
+  const ville = req.params.ville;
+
+  let infoVille = null;
+  for (const city of villeFavorites) {
+    // console.log(city);
+    if (city.name.toLowerCase() === ville.toLowerCase()) {
+      infoVille = city;
+    }
+    console.log(infoVille);
+  }
+
+  // Récupérer le contenu du champs `tz` de la bonne entrée
+  const dateFormat = dayjs().tz(infoVille.tz).format("DD MMMM YYYY HH:mm");
+  res.send(`Coucou, la ville est ${infoVille.name} , date : ${dateFormat}`);
+});
+
 // On demande à express d'écouter les requetes sur le port stocké dans la variable `port`
 // En second argument on spécifie aussi un callback, une fonction, qui sera executée quand
 // se serveur sera pret à écouter les requetes sur le port spécifié.
 app.listen(port, () => {
   console.log(
-    `Je suis pret, envoyer vos requetes sur http://localhost:${port}`
+    `Je suis pret, envoyez vos requetes sur http://localhost:${port}`
   );
 });

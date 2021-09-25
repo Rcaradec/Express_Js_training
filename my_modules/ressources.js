@@ -1,24 +1,26 @@
 const villeFavorites = [
   {
-    nom: "Paris",
+    name: "Paris",
     tz: "Europe/Paris",
   },
   {
-    name: "Nelson BC",
+    name: "Nelson",
     tz: "America/Vancouver",
   },
   {
     name: "Bangkok",
-    tz: "Asia/Bangkok",
+    tz: "Asia/Shanghai",
   },
   {
     name: "Porto",
-    tz: "Europe/Porto",
+    tz: "Europe/London",
   },
   {
     name: "Seville",
-    tz: "Europe/Sevilla",
+    tz: "Europe/Paris",
   },
 ];
+
+// On exporte notre module afin qu'il soit accessible depuis l'exterieur
 
 module.exports = villeFavorites;
