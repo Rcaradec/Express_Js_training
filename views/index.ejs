@@ -11,15 +11,12 @@
     <main>
       <h1>Voici certaines de mes villes favorites</h1>
       <ul>
-        <li><a href="/city/paris">Paris</a></li>
-        <li><a href="/city/nelson">Nelson BC</a></li>
-        <li><a href="/city/bangkok">Bangkok</a></li>
-        <li><a href="/city/porto">Porto</a></li>
-        <li><a href="/city/seville">Seville</a></li>
+        <% villeFavorites.forEach(city) {%>
+        <li>
+          <a href="/city/<%= city.name %>"><%= city.name %></a>
+        </li>
+        <% } %>
       </ul>
     </main>
   </body>
-  <footer>
-    <p>2021 , Rémi</p>
-  </footer>
 </html>

@@ -41,7 +41,11 @@ const port = 3000;
 // On écrit une route;
 app.get("/", (req, res) => {
   // si page statiquere ==>
-  res.render("index");
+  res.render("index", {
+    // objet qui contient tout le tableau stocké dans la variable qu on apporte
+    // la vue aura donc acces à la variable par le render
+    villeFavorites: villeFavorites,
+  });
 });
 
 app.get("/city/:ville", (req, res) => {
