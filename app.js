@@ -41,7 +41,7 @@ const port = 3000;
 // On écrit une route;
 app.get("/", (req, res) => {
   // si page statiquere ==>
-  res.sendFile(__dirname + "/views/index.html");
+  res.render("index");
 });
 
 app.get("/city/:ville", (req, res) => {
@@ -61,7 +61,10 @@ app.get("/city/:ville", (req, res) => {
   const dateFormat = dayjs().tz(infoVille.tz).format("DD MMMM YYYY HH:mm");
   // res.send(`Coucou, la ville est ${infoVille.name} , date : ${dateFormat}`);
   // On demande à express de faire passer EJS sur le fichier ville.ejs
-  res.render("ville");
+  res.render("ville", {
+    city: infoVille,
+    heure: dateFormat,
+  });
 });
 
 // On demande à express d'écouter les requetes sur le port stocké dans la variable `port`

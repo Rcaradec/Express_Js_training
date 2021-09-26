@@ -7,17 +7,14 @@
     <link rel="stylesheet" href="/style/style.css" type="text/css" />
     <title>Express Training</title>
   </head>
-  <header>
-          <h1>Voici cette belle ville de TODO - nom de la ville</h1>
-
-  </header>
   <body>
     <main>
-      <p>Coucou , voilà NOMVILLE TIMEZONE, INSERER ICI HEURE </p>
+      <h1>Voici la page de <span><%= city.name %></span></h1>
+      <p>Coucou , voilà <%= city.name %>, <%= heure %></p>
       </ul>
     </main>
-    <footer>
-      2021 , Rémi
-    </footer>
   </body>
+  <footer>
+      <p> 2021 , Rémi</p>
+    </footer>
 </html>

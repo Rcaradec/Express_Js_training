@@ -5,5 +5,10 @@
     "express": "^4.17.1",
     "node-dev": "^7.0.0",
     "weather-js": "^2.0.0"
-  }
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html"
 }
+  
+}
+

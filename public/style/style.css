@@ -1,8 +1,27 @@
 body {
   background-color: rgb(189, 204, 224);
-  display: flex;
   align-items: center;
   justify-content: center;
+  height: 80vh;
+  background-image: url(../images/wallpaper-gradient.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  color: azure;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+span {
+  color: orangered;
 }
 
 main {
@@ -17,13 +36,33 @@ ul {
   justify-content: space-between;
   list-style: none;
   text-transform: uppercase;
+}
+
+a {
   text-decoration: none;
+  color: rgba(255, 255, 255);
+  font-weight: bold;
+  text-shadow: 2px 12px 3px rgba(255, 255, 255, 0.1);
+}
+a:hover {
+  color: orangered;
 }
 
 li {
   color: white;
+  margin-top: 100px;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 h1 {
   color: rgb(27, 31, 30);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 300px;
 }
