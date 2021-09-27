@@ -8,7 +8,5 @@
   },
   "emmet.includeLanguages": {
     "ejs": "html"
+  }
 }
-  
-}
-

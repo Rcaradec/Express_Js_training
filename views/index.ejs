@@ -11,12 +11,11 @@
     <main>
       <h1>Voici certaines de mes villes favorites</h1>
       <ul>
-        <% villeFavorites.forEach(city) {%>
+        <% for (const city of villeFavorites) { %>
         <li>
           <a href="/city/<%= city.name %>"><%= city.name %></a>
         </li>
         <% } %>
       </ul>
     </main>
-  </body>
-</html>
+    <%- include('partials/footer') %>

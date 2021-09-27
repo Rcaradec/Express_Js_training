@@ -10,8 +10,9 @@
   <body>
     <main>
       <h1>Voici la page de <span><%= city.name %></span></h1>
-      <p>Coucou , voilà <%= city.name %>, <%= heure %></p>
-      </ul>
+      <p>A <%= city.name %>, il est <%= heure %></p>
+      <img src="<%= city.img %>" height="400px" width="600px" alt="">
     </main>
+    <%- include('partials/footer') %>
   </body>
 </html>

@@ -58,11 +58,12 @@ app.get("/city/:ville", (req, res) => {
     if (city.name.toLowerCase() === ville.toLowerCase()) {
       infoVille = city;
     }
-    console.log(infoVille);
   }
 
+  
+
   // Récupérer le contenu du champs `tz` de la bonne entrée
-  const dateFormat = dayjs().tz(infoVille.tz).format("DD MMMM YYYY HH:mm");
+  const dateFormat = dayjs().tz(infoVille.tz).format("HH:mm");
   // res.send(`Coucou, la ville est ${infoVille.name} , date : ${dateFormat}`);
   // On demande à express de faire passer EJS sur le fichier ville.ejs
   res.render("ville", {
